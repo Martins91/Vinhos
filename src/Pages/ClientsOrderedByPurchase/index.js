@@ -1,12 +1,12 @@
 import React from "react";
 import api from "../../Services/Api";
-import { Container, Content, Card } from "./style";
-import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { Container, Content, Card } from "./style";
 import { FaSpinner } from "react-icons/fa";
 
 const ClientsOrderedByPurchase = () => {
-  const [clientsOrderedByPurchase, setClientsOrdered] = useState([]);
+  const [clientsOrderedByPurchase, setClients] = useState([]);
   const [loading, setLoading] = useState(false);
   const link = useHistory();
 
@@ -17,7 +17,7 @@ const ClientsOrderedByPurchase = () => {
   const loadData = () => {
     setLoading(true);
     api.get("/clientsOrderedByPurchase").then((response) => {
-      setClientsOrdered(response.data);
+      setClients(response.data);
       setLoading(false);
     });
   };
@@ -31,17 +31,17 @@ const ClientsOrderedByPurchase = () => {
             <FaSpinner id="spinner" color="#FFF" size={100} />
           </div>
         )}
-        {clientsOrderedByPurchase.map((client) => (
-          <Card>
+        {clientsOrderedByPurchase.map((client, index) => (
+        <Card key={index}>
             <p>Cliente: {client.nome}</p>
             <p>
-              Valor total gasto:{" "}
+              Valor total gasto:
               {client.valorTotal.toLocaleString("pt-BR", {
                 style: "currency",
                 currency: "BRL",
               })}
             </p>
-          </Card>
+        </Card>
         ))}
       </Content>
       <button
@@ -55,6 +55,5 @@ const ClientsOrderedByPurchase = () => {
     </Container>
   );
 };
-
 
 export default ClientsOrderedByPurchase;

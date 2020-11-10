@@ -33,6 +33,16 @@ export const Container = styled.div`
   }
 `;
 
+export const Card = styled.div`
+  background-color: #fff;
+  box-shadow: 3px 3px 5px ${darken(0.1, "#000")};
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  margin: 5px;
+  border-radius: 2px;
+`;
+
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
@@ -70,12 +80,3 @@ export const Content = styled.div`
   }
 `;
 
-export const Card = styled.div`
-  background-color: #fff;
-  box-shadow: 3px 3px 5px ${darken(0.1, "#000")};
-  text-decoration: none;
-  color: black;
-  width: 100%;
-  margin: 5px;
-  border-radius: 2px;
-`;
