@@ -7,10 +7,7 @@ import { FaSpinner } from "react-icons/fa";
 
 const BestClient = () => {
   const [loading, setLoading] = useState(false);
-  const [bestClient, setBestClient] = useState({
-    nome:"0",
-    valorTotal: "",
-  });
+  const [bestClient, setBestClient] = useState([]);
 
   const link = useHistory();
 
