@@ -13,7 +13,7 @@ function Routes() {
       <Route path={"/ClientsOrderedByPurchase"} component={ClientsOrderedByPurchase} />
       <Route path={"/BestClient"} component={BestClient} />
       <Route path={"/BestClients"} component={BestClients} />
-      <Route path={"/RecommendWin"} component={RecommendWin} />
+      <Route path={"/RecommendWine"} component={RecommendWin} />
     </Switch>
   );
 }
